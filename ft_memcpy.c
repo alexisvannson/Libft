@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 13:10:30 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/11 13:12:39 by avannson         ###   ########.fr       */
+/*   Created: 2024/11/11 13:18:19 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/11 13:21:40 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+void	*memcpy(void *dest, const void *src, size_t n)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (i < n)
+	{
+		dest[i] = src[i];
 		i++;
-	return (i);
+	}
 }
-
-/*#include <stdio.h>
-
-int     main(void)
-{
-    printf("%i",ft_strlen("Alexis"));
-    return (0);
-}*/

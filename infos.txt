@@ -1,0 +1,29 @@
+ft_isascii a faire
+la meme pour memset; 
+
+
+verifier memcpy et finir memmove
+
+ isalpha, fait
+• isdigit,fait
+• isalnum, fait
+• isascii
+• isprint, fait
+• strlen, fait
+• memset
+• bzero, fait
+• memcpy
+• memmove
+• strlcpy
+• strlcat
+• toupper, fait
+• tolower, fait
+• strchr
+• strrchr
+• strncmp
+• memchr
+• memcmp
+• strnstr
+• atoi, fait
+• calloc
+• strdup

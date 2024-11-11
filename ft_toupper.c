@@ -1,35 +1,32 @@
-#include <stdio.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/11 16:32:37 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/11 16:37:45 by avannson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 // Convert a lowercase character to uppercase
-char get_char(char str)
+char	get_char(char str)
 {
-    if (str >= 'a' && str <= 'z')
-        return (str - 32);
-    return (str);
+	if (str >= 'a' && str <= 'z')
+		return (str - 32);
+	return (str);
 }
 
 // Convert a string to uppercase in place
-void ft_toupper(char *str)
+void	ft_toupper(char *str)
 {
-    int i = 0;
-    while (str[i])
-    {
-        str[i] = get_char(str[i]);  // Modify the string in place
-        i++;
-    }
-}
+	int	i;
 
-int main(void)
-{
-    
-    char str1[] = "sayeeee&";
-    char str2[] = "SAKNDL";
-
-    ft_toupper(str1);
-    ft_toupper(str2);
-
-    printf("%s\n", str1);  // Output: SAYEEEE&
-    printf("%s\n", str2);  // Output: SAKNDL
-    
-    return 0;
+	i = 0;
+	while (str[i])
+	{
+		str[i] = get_char(str[i]);
+		i++;
+	}
 }

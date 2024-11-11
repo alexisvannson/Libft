@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 13:10:30 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/11 13:12:39 by avannson         ###   ########.fr       */
+/*   Created: 2024/11/11 13:22:46 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/11 15:02:22 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+void	*memmove(void *dest, const void *src, size_t n)
 {
-	int	i;
+	void	temp[n];
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	
 }
-
-/*#include <stdio.h>
-
-int     main(void)
-{
-    printf("%i",ft_strlen("Alexis"));
-    return (0);
-}*/
