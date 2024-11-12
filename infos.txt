@@ -7,19 +7,19 @@ verifier memcpy et finir memmove
  isalpha, fait
 • isdigit,fait
 • isalnum, fait
-• isascii
+• isascii, fait
 • isprint, fait
 • strlen, fait
 • memset
 • bzero, fait
 • memcpy
 • memmove
-• strlcpy
+• strlcpy, en cours
 • strlcat
 • toupper, fait
 • tolower, fait
-• strchr
-• strrchr
+• strchr, fait
+• strrchr, fait
 • strncmp
 • memchr
 • memcmp
