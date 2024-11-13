@@ -10,16 +10,16 @@ verifier memcpy et finir memmove
 • isascii, fait
 • isprint, fait
 • strlen, fait
-• memset
+• memset, fait
 • bzero, fait
-• memcpy
-• memmove
-• strlcpy, en cours
+• memcpy, fait
+• memmove, fait 
+• strlcpy, 
 • strlcat
 • toupper, fait
 • tolower, fait
 • strchr, fait
-• strrchr, fait
+• strrchr
 • strncmp
 • memchr
 • memcmp

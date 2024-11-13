@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: philippevannson <philippevannson@studen    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 07:48:10 by philippevan       #+#    #+#             */
-/*   Updated: 2024/11/12 07:55:46 by philippevan      ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 int     ft_strlen(char *str)
 {
     int     i;
@@ -20,22 +8,15 @@ int     ft_strlen(char *str)
     return (i);
 }
 
-char    *ft_strrchr(char *str, int search_str)
-{
-    int i;
-    
-    i = ft_strlen(str) - 1;
-    while (str[i])
-    {
-        if (str[i] == search_str)
-            return (&str[i]); 
-            i--;
-    }
-    return (0);
-}
 
-/*#include <stdio.h> 
-int main(void)
+char *strrchr(const char *s, int c)
 {
-    printf("%s\n", ft_strrchr("lolilolopop", 'l'));
-}*/
+    int     last_index;
+
+    last_index = ft_strlen(s) - 1;
+    while(s[last_index] && s[last_index] != c)
+        i--;
+    if (last_index == 0)
+        return (0);
+    return (s[last_index]);
+}

@@ -3,53 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: philippevannson <philippevannson@studen    +#+  +:+       +#+        */
+/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 07:07:26 by philippevan       #+#    #+#             */
-/*   Updated: 2024/11/12 07:26:24 by philippevan      ###   ########.fr       */
+/*   Created: 2024/11/13 14:38:39 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/13 14:57:18 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+/*       Copy a string. Copy src to string dst of size siz. At most siz-1
+       characters will be copied. Always NULL terminates (unless siz == 0).
+*/
 
-/*  strlcpy() and strlcat() take the full size of the destination buffer and guarantee NUL-termination if there is room.  Note that room for the NUL should be included in dstsize.  Also note that strlcpy() and strlcat() only operate on true ''C'' strings. This means
-     that for strlcpy() src must be NUL-terminated and for strlcat() both src and dst() must be NUL-terminated.
-
-     strlcpy() copies up to dstsize - 1 characters from the string src to dst, NUL-terminating the result if dstsize is not 0. */
-
-int	ft_strlen(char *str)
+size_t	ft_strlcpy(char * dst, const char * src, size_t siz)
 {
+	char	*source;
+	int	taille_dest;
 	int	i;
 
+	source = (char*) src;
+	taille_dest = siz - 1;
 	i = 0;
-	while (str[i])
-		i++;
-	return (i);
+	if (siz == 0)
+		return ;
+	while (source[i] && i < taille_dest)
+	{
+		dst[i] = source[i];
+		i++;	
+	}
+	dst[i] = '\0';
+	return (ft_str
 }
 
-size_t   ft_strlcpy(char * restrict dst, const char * restrict src, size_t dstsize)
-{     
-    int len;
-    int i;
-    
-    len = dstsize - 1;
-    i = 0;
-    while (src[i] && i < len)
-    {
-        dst[i] = src[i];
-        i++;
-    }
-    dst[i] = src[i];
-    return (sizeof(dst));
-}
-#include <libc.h>
-#include <stdio.h>
 
-int main(void)
-{
-    char* str1 = "alexis";
-    char*   str2 = "lol";
-    
-    ft_strlcpy(str1, str2, 6);
-    printf("%s", str1);
-}
