@@ -14,16 +14,16 @@ verifier memcpy et finir memmove
 • bzero, fait
 • memcpy, fait
 • memmove, fait 
-• strlcpy, 
-• strlcat
+• strlcpy, fait
+• strlcat, fait
 • toupper, fait
 • tolower, fait
 • strchr, fait
-• strrchr
-• strncmp
+• strrchr, fait
+• strncmp, fait
 • memchr
 • memcmp
-• strnstr
+• strnstr, fait
 • atoi, fait
 • calloc
 • strdup

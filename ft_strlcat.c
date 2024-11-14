@@ -3,13 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/07 11:32:08 by avannson          #+#    #+#             */
-/*   Updated: 2024/07/16 16:12:10 by avannson         ###   ########.fr       */
+/*   Created: 2024/11/14 07:11:46 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/14 07:11:50 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
 
 int	str_len(char *str)
 {
@@ -23,12 +22,14 @@ int	str_len(char *str)
 	return (i);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int len)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	sum;
+	int	i;
+	int	j;
+	int	sum;
+	int	size;
 
+	size = (int) len;
 	i = str_len(dest);
 	j = 0;
 	sum = str_len(dest) + str_len(src);
@@ -44,6 +45,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 	return (sum);
 }
 /*
+#include <stdio.h>
 int	main(void)
 {
 	char	dest[] = "sayee";

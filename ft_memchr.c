@@ -1,33 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 07:11:37 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/14 07:11:40 by avannson         ###   ########.fr       */
+/*   Created: 2024/11/14 07:35:49 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/14 07:38:51 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strchr(const char *str, int search_str)
+#include <stddef.h>
+
+void *ft_memchr(const void *s, int c, size_t n)
 {
-    int i;
-    char    *new_str;
     
-    new_str = (char *) str;
-    i = 0;
-    while (new_str[i])
-    {
-        if (new_str[i] == search_str)
-            return (&new_str[i]); 
-            i++;
-    }
-    return (0);
 }
-/*
-#include <stdio.h> 
-int main(void)
-{
-    printf("%s\n", ft_strchr("alexis", 'e'));
-}*/

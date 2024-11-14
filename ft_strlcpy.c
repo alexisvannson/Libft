@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: philippevannson <philippevannson@studen    +#+  +:+       +#+        */
+/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/13 14:38:39 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/14 06:55:47 by philippevan      ###   ########.fr       */
+/*   Created: 2024/11/14 07:11:59 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/14 07:12:02 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

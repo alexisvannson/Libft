@@ -1,33 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 07:11:37 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/14 07:11:40 by avannson         ###   ########.fr       */
+/*   Created: 2024/11/14 07:24:22 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/14 07:35:22 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strchr(const char *str, int search_str)
+#include <stddef.h>
+
+char    *ft_strnstr(const char *big, const char *little, size_t len)
 {
     int i;
-    char    *new_str;
-    
-    new_str = (char *) str;
+    int j;
+    int l;
+
+    if (little == "")
+        return (big);
     i = 0;
-    while (new_str[i])
+    j = 0;
+    l = (int) len;
+    while (big[i])
     {
-        if (new_str[i] == search_str)
-            return (&new_str[i]); 
-            i++;
+        if (big[i] == little[i])
+            j++;
+        if (big[i] != little[i])
+            j = 0;
+        if ((j + 1) == l)
+            return (i - j);
+        i++;
     }
     return (0);
 }
-/*
-#include <stdio.h> 
-int main(void)
-{
-    printf("%s\n", ft_strchr("alexis", 'e'));
-}*/

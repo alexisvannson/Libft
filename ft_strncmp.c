@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/14 07:11:37 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/14 07:11:40 by avannson         ###   ########.fr       */
+/*   Created: 2024/11/14 07:11:04 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/14 07:22:37 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char    *ft_strchr(const char *str, int search_str)
+#include <stddef.h>
+
+int ft_strncmp( const char * first, const char * second, size_t length )
 {
     int i;
-    char    *new_str;
+    int len;
     
-    new_str = (char *) str;
     i = 0;
-    while (new_str[i])
+    len = (int) length;
+    while (first[i] && second[i] && i < len)
     {
-        if (new_str[i] == search_str)
-            return (&new_str[i]); 
+            if (first[i] == second[i])
+                return (first[i] - second[i]);
             i++;
     }
-    return (0);
+    return (first[i] - second[i]);
 }
-/*
-#include <stdio.h> 
-int main(void)
-{
-    printf("%s\n", ft_strchr("alexis", 'e'));
-}*/
