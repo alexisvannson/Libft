@@ -3,17 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: philippevannson <philippevannson@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 14:38:39 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/13 14:57:18 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/14 06:55:47 by philippevan      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*       Copy a string. Copy src to string dst of size siz. At most siz-1
        characters will be copied. Always NULL terminates (unless siz == 0).
 */
+#include <stddef.h>
 
+int	ft_strlen(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
 size_t	ft_strlcpy(char * dst, const char * src, size_t siz)
 {
 	char	*source;
@@ -24,14 +34,24 @@ size_t	ft_strlcpy(char * dst, const char * src, size_t siz)
 	taille_dest = siz - 1;
 	i = 0;
 	if (siz == 0)
-		return ;
+		return (0);
 	while (source[i] && i < taille_dest)
 	{
 		dst[i] = source[i];
 		i++;	
 	}
 	dst[i] = '\0';
-	return (ft_str
+	return (ft_strlen(source));
 }
+/*
+#include <stdio.h>
 
-
+int main(void)
+{
+    char * src = "sayee";
+    char    dst[10];
+    
+    printf("%zu", ft_strlcpy(dst, src, sizeof(dst)));
+    printf("%s", dst);
+    return (0);
+}*/
