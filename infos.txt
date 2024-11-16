@@ -21,7 +21,7 @@ verifier memcpy et finir memmove
 • strchr, fait
 • strrchr, fait
 • strncmp, fait
-• memchr
+• memchr, fait
 • memcmp
 • strnstr, fait
 • atoi, fait
