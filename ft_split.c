@@ -6,9 +6,11 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:05:17 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/18 18:46:03 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:12:07 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h> 
 
 int     count_delimiters(char *str, char c)
 {
@@ -33,9 +35,11 @@ char    **ft_split(char const *s, char c)
     int k;
     int j;   
     
+    nb_delimiters = count_delimiters((char*)s, c);
     arr = malloc(nb_delimiters + 1);
     j = 0;
     k = 0;
+    i = 0;
     while (s[i])
     {
         if (s[i] == c)

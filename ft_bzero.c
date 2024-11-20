@@ -3,21 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:14:17 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/11 13:16:18 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 11:52:13 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 void	bzero(void *s, size_t n)
 {
-	int	i;
+	size_t	i;
+	char	*str;
 
 	i = 0;
+	str = (char*)s;
 	while (i < n)
 	{
-		S[i] = '\n';
+		str[i] = '0';
 		i++;
 	}
+	str[i] = '\0';
 }

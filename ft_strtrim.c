@@ -1,39 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   zft_strtrim.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:09:36 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/18 18:24:44 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 15:51:13 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h> 
+int ft_strlen(char *str);
+
 char    *ft_strtrim(char const *s1, char const *set)
 {
-    int strt;
-    int end;
-    int i;
-    char    *trimmed;
+    int len;
+    int  i;
+    char *trimmed;
 
-    strt = 0;
-    i = 0;
-    end =  ft_strlen(s1) - 1;
-    while (s1[strt])
-        strt++;
-    while (s1[end])
-        end--;
-    end = ft_strlen(s1) - end;
-    strt--;
-    trimmed = malloc(ft_strlen(s1)- end - strt);
+    len = ft_strlen((char*)set);
+    trimmed = malloc(ft_strlen((char*)s1) - (2 * len) + 1);
+    i = len - 1;
     if (!trimmed)
         return (0);
-    while(strt < end)
+    while (i < ft_strlen((char*)s1) - len)
     {
-        trimmed[i] = s1[strt];
-        strt++;
+        trimmed[i] = s1[i];
+        i++;
     }
-    trimmed[i] = '\0';
-    return (trimmed);
+    return (trimmed);   
 }

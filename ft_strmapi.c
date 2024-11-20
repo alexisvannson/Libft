@@ -6,10 +6,11 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 19:51:49 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/18 19:58:03 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:18:14 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 int ft_strlen(char *str);
 
 char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
@@ -19,7 +20,7 @@ char    *ft_strmapi(char const *s, char (*f)(unsigned int, char))
     int i;
     
     i = 0;
-    len = ft_strlen(s);
+    len = ft_strlen((char*)s);
     new_str = malloc(len + 1);
     if (!new_str)
         return (0);

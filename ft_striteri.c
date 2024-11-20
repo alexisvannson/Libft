@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 20:00:54 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/18 21:37:59 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 13:13:59 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ void    ft_striteri(char *s, void (*f)(unsigned int, char*))
     i = 0;
     while (s[i])
     {
-        f(i, s[i]);
+        f(i, &s[i]);
         i++;
     }
-    return (s);
 }
