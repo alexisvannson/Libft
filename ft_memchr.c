@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:35:49 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/16 21:48:51 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/21 13:13:08 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void    *ft_memchr(const void *s, int c, size_t n)
     while (i < n)             
     {
         if (str[i] == uc)
-            return ((void *)&str[i]); 
+            return ((void *)&str[i]);
+        i++;
     }
     return (0); 
 }

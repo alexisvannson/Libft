@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:11:37 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/14 07:11:40 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 21:20:33 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,3 @@ char    *ft_strchr(const char *str, int search_str)
     }
     return (0);
 }
-/*
-#include <stdio.h> 
-int main(void)
-{
-    printf("%s\n", ft_strchr("alexis", 'e'));
-}*/

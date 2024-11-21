@@ -1,10 +1,4 @@
-ft_isascii a faire
-la meme pour memset; 
-
-
-verifier memcpy et finir memmove
-
- isalpha, fait
+isalpha
 • isdigit,fait
 • isalnum, fait
 • isascii, fait

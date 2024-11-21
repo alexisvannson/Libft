@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:11:46 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/14 07:11:50 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 21:20:45 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,3 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int len)
 	dest[i] = '\0';
 	return (sum);
 }
-/*
-#include <stdio.h>
-int	main(void)
-{
-	char	dest[] = "sayee";
-	char	src[] = "monreuf";
-	
-	printf("%d\n",ft_strlcat(dest, src, 0));
-	printf("%s\n",dest);
-}*/

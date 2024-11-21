@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:11:59 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/14 07:12:02 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 21:20:52 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,3 @@ size_t	ft_strlcpy(char * dst, const char * src, size_t siz)
 	dst[i] = '\0';
 	return (ft_strlen(source));
 }
-/*
-#include <stdio.h>
-
-int main(void)
-{
-    char * src = "sayee";
-    char    dst[10];
-    
-    printf("%zu", ft_strlcpy(dst, src, sizeof(dst)));
-    printf("%s", dst);
-    return (0);
-}*/

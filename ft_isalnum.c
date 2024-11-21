@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:58:16 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/11 13:01:48 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/21 13:15:58 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalphanum(char *str)
+int	ft_isalnum(char *str)
 {
 	int	i;
 
@@ -24,13 +24,3 @@ int	ft_isalphanum(char *str)
 	}
 	return (1);
 }
-/*
-#include <stdio.h>
-    
-int     main(void)
-{
-    printf("%d\n", ft_isalphanum("sayeeee"));
-    printf("%d\n", ft_isalphanum("sayeeee123"));
-    printf("%d\n", ft_isalphanum("sayeeee12 3"));
-    printf("%d\n", ft_isalphanum("sayAé&eeee123"));
-}*/

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 16:29:28 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/11 16:32:22 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 21:21:22 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,3 @@ char	*ft_tolower(char *str)
 	}
 	return (str);
 }
-/*
-#include <stdio.h>
-int main(void)
-{
-    
-    char str1[] = "sayeeee&";
-    char str2[] = "SAKNDL";
-
-    ft_tolower(str1);
-    ft_tolower(str2);
-
-    printf("%s\n", str1);  // Output: SAYEEEE&
-    printf("%s\n", str2);  // Output: SAKNDL
-    
-    return 0;
-}*/

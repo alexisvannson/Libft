@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 18:21:33 by avannson          #+#    #+#             */
-/*   Updated: 2024/07/16 14:09:38 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 21:21:11 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
+
 #include <string.h>
 
 int	get_len(char *str)
@@ -49,13 +49,3 @@ char	*ft_strstr(char *str, char *to_find)
 	}
 	return (NULL);
 }
-/*
-int	main(void)
-{
-	char str[] = "j'aime mager des pates avec du riz";
-	char to_find[] = "des";
-	printf("%s\n", ft_strstr(str, to_find));
-	//printf("%s\n", strstr());
-	return (0);
-}
-*/

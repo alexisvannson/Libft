@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:47:23 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/19 21:00:15 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/20 19:41:40 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,4 @@ char    *ft_itoa(int n)
     str[i++] = n;
     str[++i] = '\0';
     return (str);
-}
-
-
-int main(void)
-{ 
-    printf("%s \n", ft_itoa(129843));
-    return (0);
 }

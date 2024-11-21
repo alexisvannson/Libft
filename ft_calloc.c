@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:44:14 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/18 08:54:30 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/21 13:18:44 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
      allocated memory.  The allocated memory is filled with bytes of value
      zero.*/
 
-void *calloc(size_t count, size_t size)
+void *ft_calloc(size_t count, size_t size)
 {
     void    *buffer;
     
