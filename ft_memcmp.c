@@ -22,6 +22,11 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     i = 0;
     str1 = (char*) s1;
     str2 = (char*) s2;
+    
+    if (n == 0)
+        return (0);
+    if (n == 1)
+        return (str1[0] - str2[0]);
     while (str1[i] && i < n)
     {
         if (str1[i] != str2[i])
@@ -30,12 +35,4 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     }
     return (str1[i] - str2[i]);
     
-}
-#include <stdio.h>
-int main(int arg, char **argv)
-{
-    if (arg == 0)
-        return (-1);
-    printf("mon output %i, la vraie fonction %i \n", ft_memcmp(argv[1],argv[2], 1), memcmp(argv[1], argv[2], 1));
-    return(0);
 }
