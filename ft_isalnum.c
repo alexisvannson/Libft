@@ -6,10 +6,11 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:58:16 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/21 13:15:58 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/23 12:47:57 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
 int	ft_isalnum(char *str)
 {
 	int	i;
@@ -22,5 +23,12 @@ int	ft_isalnum(char *str)
 				return (0);
 		i++;
 	}
+	return (1);
+}*/
+int	ft_isalnum(char c)
+{
+	if (!(c >= 65 && c <= 90) && !(c >= 97 && c <= 122))
+		if (!(c >= 48 && c <= 57))
+			return (0);
 	return (1);
 }

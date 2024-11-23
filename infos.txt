@@ -1,23 +1,16 @@
 isalpha
-• isdigit,fait
-• isalnum, fait
-• isascii, fait
-• isprint, fait
-• strlen, fait
-• memset, fait
-• bzero, fait
-• memcpy, fait
-• memmove, fait 
-• strlcpy, fait
-• strlcat, fait
-• toupper, fait
-• tolower, fait
-• strchr, fait
-• strrchr, fait
-• strncmp, fait
-• memchr, fait
+• isdigit,
+• memcpy, 
+• memmove
+• strlcpy,
+• strlcat
+• strchr
+• strrchr
+• strncmp
 • memcmp
-• strnstr, fait
-• atoi, fait
+• strnstr
+• atoi,
 • calloc
-• strdup
+ft_split 
+ft_strtrim  
+ft_substr

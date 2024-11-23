@@ -6,11 +6,12 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:50:30 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/21 13:25:21 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/23 12:49:07 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char *str)
+
+/*int	ft_isalpha(char *str)
 {
 	int	i;
 
@@ -22,5 +23,12 @@ int	ft_isalpha(char *str)
 				return (0);
 		i++;
 	}
+	return (1);
+}*/
+int	ft_isalpha(char c)
+{
+	if (!(((c >= 'A') && (c <= 'Z')) || 
+              ((c >= 'a') && (c <= 'z'))))
+				return (0);
 	return (1);
 }

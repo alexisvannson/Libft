@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:17:03 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/21 19:09:40 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/22 23:24:28 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
     i = 0;
     str1 = (char*) s1;
     str2 = (char*) s2;
-    
     if (n == 0)
         return (0);
     if (n == 1)
