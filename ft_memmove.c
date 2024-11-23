@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 13:22:46 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/22 23:14:15 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/23 18:33:15 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,12 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		destination[i] = temp[i];
 		i++;
 	}
+	while (source[i])
+	{
+		destination[i] = source[i];
+		i++;
+	}
 	destination[i] = '\0';
 	return (destination);
 }
+

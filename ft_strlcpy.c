@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:11:59 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/20 21:20:52 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/23 17:47:22 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,22 +24,35 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
-size_t	ft_strlcpy(char * dst, const char * src, size_t siz)
+int	ft_strlcpy(char * dst, const char * src, int siz)
 {
 	char	*source;
+	char	*dest;
 	int	taille_dest;
 	int	i;
 
 	source = (char*) src;
+	dest = (char*) dst;
 	taille_dest = siz - 1;
 	i = 0;
 	if (siz == 0)
 		return (0);
 	while (source[i] && i < taille_dest)
 	{
-		dst[i] = source[i];
+		dest[i] = source[i];
 		i++;	
 	}
 	dst[i] = '\0';
-	return (ft_strlen(source));
+	return ((unsigned long) ft_strlen(source));
 }
+/*
+#include <stdio.h>
+#include <string.h>
+
+int	main(int argc, char **argv)
+{
+	if (!argc)
+		return(0);
+	printf("ma version: %d , %s\n", ft_strlcpy(argv[1], argv[2], 5), argv[1]);
+	printf("la leurs: %lu , %s\n", strlcpy(argv[1], argv[2], 5), argv[1]);
+}*/
