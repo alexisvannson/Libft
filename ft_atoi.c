@@ -3,30 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:47:48 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/11 16:46:07 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/26 13:34:37 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdlib.h>
 
 int	char_toint(char c)
 {
 	return (c - '0');
-}
-
-int	ft_isdigit(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!(str[i] >= 48 && str[i] <= 57))
-			return (0);
-		i++;
-	}
-	return (1);
 }
 
 int	ft_atoi(char *str)
@@ -34,27 +22,43 @@ int	ft_atoi(char *str)
 	int	value;
 	int	i;
 	int	sign;
+	int	checked_sign;
 
 	i = 0;
 	value = 0;
 	sign = 1;
-	while (!(str[i] >= 48 && str[i] <= 57))
+ 
+    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+    	i++;
+	while ((str[i] != '\0' && (str[i] >= '0' && str[i] <= '9') )|| (str[i] == '-' || str[i] == '+'))
 	{
 		if (str[i] == '-')
-		sign *= -1;
-		i++;
-	}
-	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
-	{
-		value = 10 * value + char_toint(str[i]);
+			sign *= -1;
+		if ((str[i] != '\0' && (str[i] >= '0' && str[i] <= '9') ))
+		{
+			value = 10 * value + char_toint(str[i]);
+		}
 		i++;
 	}
 	return (sign * value);
 }
+
+
+
+
+
 /*
-int     main(void)
-{
-    printf("%i", ft_atoi("2763848"));
-    return (0);
-}
-*/
+#include <stdio.h>
+
+int main(void) {
+    const char *str1 = "  -----712645809h";
+    const char *str3 = "  -789";
+    const char *str4 = "  123abc";
+
+    printf("The integer value is: %d\n", atoi((char *)str1)); // Output: -123
+    printf("The integer value is: %d\n", ft_atoi((char *)str1)); // Output: 456
+    printf("The integer value is: %d\n", ft_atoi((char *)str3)); // Output: -789
+    printf("The integer value is: %d\n", ft_atoi((char *)str4)); // Output: 123
+
+    return 0;
+}*/

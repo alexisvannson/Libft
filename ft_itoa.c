@@ -6,48 +6,72 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:47:23 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/22 11:57:19 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/27 11:42:48 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
  
- 
+ static int	get_size(int n)
+{
+	int	size;
+
+	size = 0;
+	if (n <= 0)
+		size++;
+	while (n != 0)
+	{
+		n = n / 10;
+		size++;
+	}
+	return (size);
+}
+char    *fill_str( char* mem, int offset, int n, int size)
+{
+    while (n > 0 && (size > offset))
+    {
+        mem[size - 1] = n % 10 + '0';
+        n = n / 10;
+        size --;
+    }
+    return (mem);
+}
+
 char    *ft_itoa(int n)
 {   
     char    *str;
-    char    *final;
-    int i;
-    int j;
+    int size;
 
-    str = malloc(101);
+    size = get_size(n);
+    str = malloc(size * sizeof(char) + 1);
     if (!str)
         return (0);
-        final = malloc(101);
-    if (!final)
-        return (0);
-    i = 0;
-    j = 0;
-    while (n >= 10)
+    if (n == 0)
+        return ("0");
+    if (n < 0)
     {
-        str[i] = n % 10 + '0';
-        n = n / 10;
-        i++;
+        str[0] = '-';
+        str[1] = '2';
+        n = - n;
     }
-    str[i++] = n;
-    str[++i] = '\0';
-    while (i >= 0)
+    if (n == -2147483648)
     {
-        final[j] = str[i];
-        j++;
-        i--;
+        str[0] = '-';
+        str[1] = '2';
+        return(fill_str(str,2, 147483648, size));
     }
-    return (str);
+    return(fill_str(str, 0, n, size));
+
 }
+/*
+
 #include <stdio.h>
 int main(void)
 {
-    printf("%s", ft_itoa(1234567));
+    printf("%s\n", ft_itoa(1234567));
+    printf("%s\n", ft_itoa(-2147483648));
+    printf("%s\n", ft_itoa(-21483648));
+    printf("%s\n", ft_itoa(0));
     return (0);
-}
+}*/
