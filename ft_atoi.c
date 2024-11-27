@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:47:48 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/26 13:34:37 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/27 15:09:46 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,12 @@ int	ft_atoi(char *str)
 	int	value;
 	int	i;
 	int	sign;
-	int	checked_sign;
 
 	i = 0;
 	value = 0;
 	sign = 1;
- 
-    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-    	i++;
+	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+		i++;
 	while ((str[i] != '\0' && (str[i] >= '0' && str[i] <= '9') )|| (str[i] == '-' || str[i] == '+'))
 	{
 		if (str[i] == '-')
@@ -42,11 +40,6 @@ int	ft_atoi(char *str)
 	}
 	return (sign * value);
 }
-
-
-
-
-
 /*
 #include <stdio.h>
 

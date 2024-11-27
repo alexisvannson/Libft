@@ -3,48 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: avannson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/11 13:22:46 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/25 21:30:11 by avannson         ###   ########.fr       */
+/*   Created: 2024/11/27 17:36:37 by avannson          #+#    #+#             */
+/*   Updated: 2024/11/27 18:57:00 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void    *ft_memmove(void *dst, const void *src, size_t len)
 {
-	int	i;
-	int	len;
-	char	*destination;
-	char	*source;
-	char	temp[n];
-
-	len = (int) n;
-	destination = (char*) dest;
-	source = (char*) src;
-	i = 0;
-	while (i < len)
-	{
-		temp[i] = source[i];
-		i++;
-	}
-	temp[i] = '\0';
-	i = 0;
-	while (temp[i])
-	{
-		destination[i] = temp[i];
-		i++;
-	}
-	/*while (source[i])
-	{
-		destination[i] = source[i];
-		i++;
-	}*/   
-
-
-
-	destination[i] = '\0';
-	return (destination);
+    char    *src2;
+    char    *dst2;
+    size_t    i;
+    
+    if (!dst && !src)
+        return (NULL);
+    src2 = (char *) src;
+    dst2 = (char *) dst;
+    i = 0;
+    if (dst2 > src2)
+        while (len-- > 0)
+            dst2[len] = src2[len];
+    else
+    {
+        while (i++ < len)
+            dst2[i] = src2[i];
+    }
+    return (dst);
 }
-

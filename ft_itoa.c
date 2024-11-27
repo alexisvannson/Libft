@@ -6,14 +6,14 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:47:23 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/27 11:42:48 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:58:32 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
- 
- static int	get_size(int n)
+
+int	get_size(int n)
 {
 	int	size;
 
@@ -27,6 +27,7 @@
 	}
 	return (size);
 }
+
 char    *fill_str( char* mem, int offset, int n, int size)
 {
     while (n > 0 && (size > offset))
@@ -65,13 +66,15 @@ char    *ft_itoa(int n)
 
 }
 /*
-
 #include <stdio.h>
 int main(void)
 {
-    printf("%s\n", ft_itoa(1234567));
-    printf("%s\n", ft_itoa(-2147483648));
-    printf("%s\n", ft_itoa(-21483648));
-    printf("%s\n", ft_itoa(0));
-    return (0);
+	printf("%s\n", ft_itoa(1234567));
+	printf("%s\n", ft_itoa(-2147483648));
+	printf("%s\n", ft_itoa(2147483647));
+	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-120));
+	printf("%s\n", ft_itoa(-21483648));
+	printf("%s\n", ft_itoa(0));
+	return (0);
 }*/

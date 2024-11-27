@@ -6,34 +6,45 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:17:03 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/24 12:36:09 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/27 18:34:16 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
-#include <libc.h>
+#include <string.h>
+#include <stdio.h>
 
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    unsigned char    *str1;
-    unsigned char    *str2;
-    size_t  i;
+	unsigned char    *str1;
+	unsigned char    *str2;
 
-    i = 0;
-    str1 = (unsigned char*) s1;
-    str2 = (unsigned char*) s2;
-    if (n == 0)
-        return (0);
-    if (n == 1)
-        return (str1[0] - str2[0]);
-    while (i < n)
-    {
-        if (str1[i] != str2[i])
-            return (str1[i] - str2[i]);
-        i++;
-    }
-    return (str1[i] - str2[i]);
+	str1 = (unsigned char*) s1;
+	str2 = (unsigned char*) s2;
+	if (n == 0)
+		return (0);
+	while (n-- > 0)
+		if (str1[n - 1] != str2[n - 1])
+			return (str1[n - 1] - str2[n - 1]);
+	return (0);
 }
+/*
+int	main(void)
+{
+	char s[] = {-128, 0, 127, 0};
+	char sCpy[] = {-128, 0, 127, 0};
+	char s2[] = {0, 0, 127, 0};
+	
+	 printf("ma fnct %i \n", ft_memcmp(s, s2, 1));
+	 printf("ma fnct %i \n", memcmp(s, s2, 1));
+	 printf("ma fnct %i \n", ft_memcmp(s2, s, 1));
+	 printf("ma fnct %i \n", memcmp(s2, s, 1));
+	return (0);
+} */
+
+
+
+
 /*
 #include <stdio.h>
 int main(void)
