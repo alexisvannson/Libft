@@ -1,16 +1,1 @@
-isalpha
-• isdigit,
-• memcpy, 
-• memmove
-• strlcpy,
-• strlcat
-• strchr
-• strrchr
-• strncmp
-• memcmp
-• strnstr
-• atoi,
-• calloc
-ft_split 
-ft_strtrim  
-ft_substr
+Failed tests: ft_memmove, ft_atoi, ft_strrchr, ft_strncmp, ft_strlcat, ft_substr, ft_strnstr, ft_itoa, ft_strtrim, ft_strlcpy, putstr_fd, ft_strchr, calloc, ft_split, ft_memcmp,

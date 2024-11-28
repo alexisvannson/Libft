@@ -6,39 +6,43 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:47:48 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/27 15:09:46 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:33:55 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-int	char_toint(char c)
+int char_toint(char c)
 {
-	return (c - '0');
+    return (c - '0');
 }
 
-int	ft_atoi(char *str)
+int ft_atoi(char *str)
 {
-	int	value;
-	int	i;
-	int	sign;
+    int value;
+    int i;
+    int sign;
 
-	i = 0;
-	value = 0;
-	sign = 1;
-	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	while ((str[i] != '\0' && (str[i] >= '0' && str[i] <= '9') )|| (str[i] == '-' || str[i] == '+'))
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		if ((str[i] != '\0' && (str[i] >= '0' && str[i] <= '9') ))
-		{
-			value = 10 * value + char_toint(str[i]);
-		}
-		i++;
-	}
-	return (sign * value);
+    if (!str) // Gestion des pointeurs NULL
+        return (0);
+    i = 0;
+    value = 0;
+    sign = 1;
+    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+           str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+        i++;
+    if (str[i] == '-' || str[i] == '+')
+    {
+        if (str[i] == '-') 
+            sign = -1;
+        i++;
+    }
+    while (str[i] >= '0' && str[i] <= '9')
+    {
+        value = 10 * value + char_toint(str[i]);
+        i++;
+    }
+    return (sign * value);
 }
 /*
 #include <stdio.h>

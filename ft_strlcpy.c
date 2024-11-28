@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:11:59 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/23 17:47:22 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/28 14:20:52 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,45 +14,27 @@
        characters will be copied. Always NULL terminates (unless siz == 0).
 */
 #include <stddef.h>
-
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-int	ft_strlcpy(char * dst, const char * src, int siz)
-{
-	char	*source;
-	char	*dest;
-	int	taille_dest;
-	int	i;
-
-	source = (char*) src;
-	dest = (char*) dst;
-	taille_dest = siz - 1;
-	i = 0;
-	if (siz == 0)
-		return (0);
-	while (source[i] && i < taille_dest)
-	{
-		dest[i] = source[i];
-		i++;	
-	}
-	dst[i] = '\0';
-	return ((unsigned long) ft_strlen(source));
-}
-/*
-#include <stdio.h>
 #include <string.h>
 
-int	main(int argc, char **argv)
+int	ft_strlen(char *str);
+void    *ft_memcpy(void *dest, const void *src, size_t n);
+
+size_t	ft_strlcpy(char * dst, const char * src, size_t siz)
 {
-	if (!argc)
-		return(0);
-	printf("ma version: %d , %s\n", ft_strlcpy(argv[1], argv[2], 5), argv[1]);
-	printf("la leurs: %lu , %s\n", strlcpy(argv[1], argv[2], 5), argv[1]);
-}*/
+	size_t	len_src;
+
+	if (!dst || !src)
+        	return (0);
+	len_src = (size_t) ft_strlen((char *) src);
+	if (len_src + 1 <  siz)
+	{
+		ft_memcpy(dst, src, len_src);
+		dst[len_src] = '\0';
+	}
+	else if (siz != 0)
+	{
+		ft_memcpy(dst, src, siz - 1);
+		dst[siz - 1] = '\0';
+	}
+	return (len_src);
+}

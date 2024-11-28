@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 16:05:17 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/20 13:12:07 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/28 12:07:48 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,3 +56,25 @@ char    **ft_split(char const *s, char c)
     arr[j] = 0;
     return (arr);
 }
+/*
+#include <stdio.h>
+int main(void)
+{
+    int i;
+    char **sayee;
+
+    i = 0;
+
+    sayee = ft_split("Patrick adore manger de la confiture de framboise!", ' ');
+    if (sayee == NULL) {
+        fprintf(stderr, "Erreur lors de la division de la chaîne.\n");
+        return (1);
+    }
+
+    while (sayee[i]) {
+        printf("%s\n", sayee[i]);
+        i++;
+    }
+
+    return (0);
+}*/
