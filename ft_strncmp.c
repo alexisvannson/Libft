@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:11:04 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/28 15:13:22 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:39:46 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,18 @@
 
 int ft_strncmp( const char * first, const char * second, size_t length )
 {
-    int i;
-    int len;
+    size_t	i;
     
     i = 0;
-    len = (int) length;
-    while (first[i] && second[i] && i < len)
+    while (first[i] && second[i] && i < length)
     {
             if (first[i] != second[i])
                 return (first[i] - second[i]);
             i++;
+    }
+    if (i < length)
+    {
+        return (unsigned char)first[i] - (unsigned char)second[i];
     }
     return (0);
 }

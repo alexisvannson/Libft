@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 08:17:03 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/27 18:34:16 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:19:18 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,13 @@ int ft_memcmp(const void *s1, const void *s2, size_t n)
 
 	str1 = (unsigned char*) s1;
 	str2 = (unsigned char*) s2;
-	if (n == 0)
-		return (0);
-	while (n-- > 0)
-		if (str1[n - 1] != str2[n - 1])
-			return (str1[n - 1] - str2[n - 1]);
+	while (n--)
+        {
+        	if (*str1 != *str2)
+            		return (*str1 - *str2);
+        	str1++;
+        	str2++;
+        }
 	return (0);
 }
 /*

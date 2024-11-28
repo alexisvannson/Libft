@@ -6,19 +6,22 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 09:18:51 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/28 10:38:54 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/28 17:27:51 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 #include <stdlib.h>
+#include "libft.h"
 
 char    *ft_substr(char const *s, unsigned int start, size_t len)
 {
     char    *sub;
-    size_t  i;
-    int j;
+    size_t	i;
+    size_t	j;
     
+    if (start >= ft_strlen(s))// Si 'start' dépasse la longueur de la chaîne, retourner une chaîne vide
+        return (malloc(1));
     sub = malloc(len + 1);
     if (!sub)
         return (0);
@@ -30,6 +33,7 @@ char    *ft_substr(char const *s, unsigned int start, size_t len)
         i++;
         j++;
     }
+    sub[i] = '\0';
     return (sub);
 }
 /*
