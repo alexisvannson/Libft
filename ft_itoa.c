@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:47:23 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/27 18:58:32 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:02:03 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,31 +50,30 @@ char    *ft_itoa(int n)
         return (0);
     if (n == 0)
         return ("0");
+    if (n == -2147483648)
+    {
+        str[0] = '-';
+        str[1] = '2';
+        return(fill_str(str, 2, 147483648, size));
+    }
     if (n < 0)
     {
         str[0] = '-';
         str[1] = '2';
         n = - n;
     }
-    if (n == -2147483648)
-    {
-        str[0] = '-';
-        str[1] = '2';
-        return(fill_str(str,2, 147483648, size));
-    }
     return(fill_str(str, 0, n, size));
-
 }
-/*
+
 #include <stdio.h>
 int main(void)
 {
-	printf("%s\n", ft_itoa(1234567));
+	printf("%s\n", ft_itoa(1));
 	printf("%s\n", ft_itoa(-2147483648));
 	printf("%s\n", ft_itoa(2147483647));
 	printf("%s\n", ft_itoa(0));
-	printf("%s\n", ft_itoa(-120));
-	printf("%s\n", ft_itoa(-21483648));
-	printf("%s\n", ft_itoa(0));
+	printf("%s\n", ft_itoa(-1));
+	printf("%s\n", ft_itoa(-42));
+	printf("%s\n", ft_itoa(42));
 	return (0);
-}*/
+}

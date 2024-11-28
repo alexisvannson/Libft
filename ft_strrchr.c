@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:12:23 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/27 15:22:19 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/28 15:32:15 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@ char    *ft_strrchr(const char *str, int search_str)
     char    *new_str;
     
     new_str = (char*) str;
-    if (search_str == 0)
-        return (new_str);
+    if (search_str == '\0')
+        return ((char *)str + ft_strlen((char *)str));
     i = ft_strlen(new_str);
     while (i >= 0)
     {
