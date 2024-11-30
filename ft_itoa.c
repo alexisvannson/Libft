@@ -6,12 +6,13 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:47:23 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/28 17:26:20 by avannson         ###   ########.fr       */
+/*   Updated: 2024/11/30 12:13:04 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <stdio.h>
+#include "libft.h"
 
 int	get_size(int n)
 {
@@ -28,42 +29,45 @@ int	get_size(int n)
 	return (size);
 }
 
-char    *fill_str( char* mem, int offset, int n, int size)
+char	*fill_str(char *mem, int n, int size)
 {
-    while (n > 0 && (size > offset))
-    {
-        mem[size - 1] = n % 10 + '0';
-        n = n / 10;
-        size --;
-    }
-    return (mem);
+	mem[size] = '\0'; 
+	while (size > 0 && n != 0)
+	{
+		mem[--size] = (n % 10) + '0';
+		n = n / 10;
+	}
+	return (mem);
 }
 
-char    *ft_itoa(int n)
-{   
-    char    *str;
-    int size;
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		size;
 
-    size = get_size(n);
-    str = malloc(size * sizeof(char) + 1);
-    if (!str)
-        return (0);
-    if (n == 0)
-        return ("0");
-    if (n == -2147483648)
-    {
-        str[0] = '-';
-        str[1] = '2';
-        return(fill_str(str, 2, 147483648, size));
-    }
-    if (n < 0)
-    {
-        str[0] = '-';
-        str[1] = '2';
-        n = - n;
-    }
-    return(fill_str(str, 0, n, size));
+	size = get_size(n);
+	str = malloc((size + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	if (n == 0) 
+	{
+		str[0] = '0';
+		str[1] = '\0';
+		return (str);
+	}
+	if (n == -2147483648) 
+	{
+		str = "-2147483648";
+		return (ft_strdup(str));
+	}
+	if (n < 0) 
+	{
+		str[0] = '-';
+		n = -n;
+	}
+	return (fill_str(str, n, size));
 }
+
 /*
 #include <stdio.h>
 int main(void)
