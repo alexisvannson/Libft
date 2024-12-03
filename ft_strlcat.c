@@ -6,44 +6,39 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:11:46 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/23 17:45:24 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/03 22:36:02 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	str_len(char *str)
-{
-	int	i;
+#include "libft.h"
 
+size_t	ft_strlcat(char *dest, const char *src, size_t len)
+{
+	size_t	dest_len;
+	size_t	src_len;
+	size_t	i;
+
+	if (!dest || !src)
+		return (0);
+	dest_len = ft_strlen(dest);
+	src_len = ft_strlen(src);
+	// If `len` is smaller than or equal to the length of `dest`, return `len + src_len`
+	if (len <= dest_len)
+		return (len + src_len);
+
+	// Start appending from the end of `dest`
 	i = 0;
-	while (str[i])
+	while (src[i] && (dest_len + i < len - 1))
 	{
+		dest[dest_len + i] = src[i];
 		i++;
 	}
-	return (i);
+	dest[dest_len + i] = '\0';
+
+	return (dest_len + src_len);
 }
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int len)
-{
-	int	i;
-	int	j;
-	int	sum;
-	int	size;
 
-	size = (int) len;
-	i = str_len(dest);
-	j = 0;
-	sum = str_len(dest) + str_len(src);
-	if (size == 0 || size <= str_len(dest))
-		return (str_len(src) + size);
-	while (src[j] && (i < size - 1))
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (sum);
-}
 /*#include <stdio.h>
 
 int	main(int argc, char **argv)

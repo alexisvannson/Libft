@@ -6,11 +6,11 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:47:23 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/30 12:13:04 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/03 22:18:45 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+/*#include <stdlib.h>
 #include <stdio.h>
 #include "libft.h"
 
@@ -68,7 +68,7 @@ char	*ft_itoa(int n)
 	return (fill_str(str, n, size));
 }
 
-/*
+
 #include <stdio.h>
 int main(void)
 {
@@ -81,3 +81,49 @@ int main(void)
 	printf("%s\n", ft_itoa(42));
 	return (0);
 }*/
+#include <stdlib.h>
+
+int	get_size(int n)
+{
+	int	size;
+
+	size = 0;
+	if (n <= 0) 
+		size++;
+	while (n != 0)
+	{
+		n = n / 10;
+		size++;
+	}
+	return (size);
+}
+
+char	*ft_itoa(int n)
+{
+	char	*str;
+	int		size;
+	long	num;
+
+	num = n;
+	size = get_size(num);
+	str = malloc((size + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	str[size] = '\0';
+	if (num == 0) 
+	{
+		str[0] = '0';
+		return (str);
+	}
+	if (num < 0)
+	{
+		str[0] = '-';
+		num = -num;
+	}
+	while (num != 0)
+	{
+		str[--size] = (num % 10) + '0';
+		num = num / 10;
+	}
+	return (str);
+}
