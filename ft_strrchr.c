@@ -6,28 +6,25 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:12:23 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/28 15:32:15 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/03 22:02:50 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-int ft_strlen(char *str);
-
-char    *ft_strrchr(const char *str, int search_str)
+char *ft_strrchr(const char *s, int c)
 {
-    int i;
-    char    *new_str;
+    char *last_occurrence;
     
-    new_str = (char*) str;
-    if (search_str == '\0')
-        return ((char *)str + ft_strlen((char *)str));
-    i = ft_strlen(new_str);
-    while (i >= 0)
+    last_occurrence = NULL;
+    while (*s)
     {
-        if (str[i] == search_str)
-            return ((char*)&str[i]);
-	i--;
+        if (*s == (char)c)
+            last_occurrence = (char *)s; 
+        s++;
     }
-    return (0);
+    if (c == '\0') 
+        return (char *)s;
+
+    return last_occurrence;
 }
