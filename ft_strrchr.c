@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/14 07:12:23 by avannson          #+#    #+#             */
-/*   Updated: 2024/12/03 22:02:50 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/04 13:38:45 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 char *ft_strrchr(const char *s, int c)
 {
-    char *last_occurrence;
-    
-    last_occurrence = NULL;
+    char *last_occurrence = NULL;
+
     while (*s)
     {
-        if (*s == (char)c)
-            last_occurrence = (char *)s; 
+        if (*s == (unsigned char)c)
+            last_occurrence = (char *)s;
         s++;
     }
-    if (c == '\0') 
+    if ((unsigned char)c == '\0')
         return (char *)s;
 
     return last_occurrence;
 }
+
