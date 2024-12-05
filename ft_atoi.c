@@ -6,7 +6,7 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:47:48 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/28 14:33:55 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/04 12:02:00 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,12 @@ int ft_atoi(char *str)
     int i;
     int sign;
 
-    if (!str) // Gestion des pointeurs NULL
+    if (!str)
         return (0);
     i = 0;
     value = 0;
     sign = 1;
-    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-           str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
+    while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
         i++;
     if (str[i] == '-' || str[i] == '+')
     {
