@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: avannson <avannson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 18:21:33 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/20 21:21:11 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:38:22 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
+#include "libft.h"
 
 int	get_len(char *str)
 {

@@ -6,25 +6,10 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:58:16 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/23 12:47:57 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/05 15:13:30 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-int	ft_isalnum(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!(str[i] >= 65 && str[i] <= 90) && !(str[i] >= 97 && str[i] <= 122))
-			if (!(str[i] >= 48 && str[i] <= 57))
-				return (0);
-		i++;
-	}
-	return (1);
-}*/
 int	ft_isalnum(char c)
 {
 	if (!(c >= 65 && c <= 90) && !(c >= 97 && c <= 122))

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: avannson <avannson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 11:17:12 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/19 11:52:45 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:59:02 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-int ft_strlen(char *str);
+#include "libft.h"
 
-void    ft_putstr_fd(char *str, int fd)
+void	ft_putstr_fd(char *str, int fd)
 {
-    write(fd, str, ft_strlen(str));
+	write(fd, str, ft_strlen(str));
 }

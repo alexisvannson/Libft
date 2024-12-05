@@ -3,32 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
+/*   By: avannson <avannson@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 12:50:30 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/23 12:49:07 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/05 16:54:42 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
-/*int	ft_isalpha(char *str)
+int	ft_isalpha(int c)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (!(((*str >= 'A') && (*str <= 'Z')) || 
-              ((*str >= 'a') && (*str <= 'z'))))
-				return (0);
-		i++;
-	}
-	return (1);
-}*/
-int	ft_isalpha(char c)
-{
-	if (!(((c >= 'A') && (c <= 'Z')) || 
-              ((c >= 'a') && (c <= 'z'))))
-				return (0);
+	if (!(((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z'))))
+		return (0);
 	return (1);
 }

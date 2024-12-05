@@ -6,24 +6,14 @@
 /*   By: avannson  <marvin@42.fr>                   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:09:36 by avannson          #+#    #+#             */
-/*   Updated: 2024/11/30 12:05:45 by avannson         ###   ########.fr       */
+/*   Updated: 2024/12/05 15:12:11 by avannson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h> 
-//#include "libft.h"
+#include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return(i);
-}
-
-int	ft_isinset(char c,char *set)
+int	ft_isinset(char c, char *set)
 {
 	int	i;
 
@@ -69,4 +59,3 @@ int	main(void)
 	printf("Trimmed: '%s'\n", ft_strtrim("aaaa", "a"));
 	return(0);
 }*/
-
